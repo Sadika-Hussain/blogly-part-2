@@ -95,7 +95,8 @@ def delete_user(user_id):
 
     return redirect('/users')
 
-
+# Routes for part 2 
+###################################################
 @app.route('/users/<int:user_id>/posts/new')
 def post_form(user_id):
     """ Display the form for creating a new post for a given user."""
