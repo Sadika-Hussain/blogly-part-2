@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} About User {% endblock %}
+
+{% block content %}
+<div class="user-info">
+    <img src="{{user.image_url}}" alt="No image found for this user" width="200" height="300">
+    <div class="user-details">
+        <h1>{{user.get_full_name()}}</h1>
+        <div class="buttons">
+            <form action="/users/{{user.id}}/edit">
+                <input type="submit" value="Edit" class="edit">
+            </form>
+            <form action="/users/{{user.id}}/delete" method="post">
+                <input type="submit" value="Delete" class="delete">
+            </form>
+        </div>
+
+        <div class="posts-list-container">
+            <h1>Posts</h1>
+            {% if not posts %}
+            <p>No posts made by {{user.first()}} yet.</p>
+            {% endif %}
+            <ul class="posts-list">
+                {% for post in posts %}
+                <li><a href="/posts/{{post.id}}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <form action="/users/{{user.id}}/posts/new">
+            <input type="submit" value="Add Post">
+        </form>
+
+    </div>
+</div>
+{% endblock %}

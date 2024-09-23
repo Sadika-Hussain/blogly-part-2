@@ -1,0 +1,248 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Center content in a container */
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Styling for the 'View all users' and 'View all posts' link */
+a.view-users, a.view-all-posts {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a.view-users:hover {
+    background-color: #0056b3;
+}
+
+a.view-all-posts {
+    background-color: rgb(12, 148, 148);
+}
+
+a.view-all-posts:hover {
+    background-color: rgb(14, 102, 102);
+}
+
+
+/* Users page styles */
+.user-list {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.user-list li {
+    margin: 10px 0;
+}
+
+.user-list li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.user-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+
+form input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 100px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Create and Edit User/Post form styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="url"], 
+.form-container textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="url"]:focus,
+.form-container textarea:focus  {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/* Individual user page styles */
+
+/* Flex container for the user info */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Style the user image on the left side */
+.user-info img {
+    display: block;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex container for the user details and buttons */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Style the user full name heading */
+.user-details h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+
+/* Posts list container */
+.posts-list-container {
+    margin-top: 20px; /* Space above posts section */
+}
+
+/* Style the posts heading */
+.posts-list-container h1 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Style the list of posts */
+.posts-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.posts-list li {
+    margin-bottom: 8px; /* Space between posts */
+}
+
+.posts-list a {
+    text-decoration: none; /* Remove underline */
+    color: #007BFF; /* Link color */
+    transition: color 0.3s; /* Smooth transition for hover */
+}
+
+.posts-list a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the post detail page */
+.post-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-container p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.post-container em {
+    font-weight: bold;
+    color: #666;
+}
+
+.post-container span {
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+
+
+
+/* Buttons container for the edit and delete buttons */
+.buttons {
+    display: flex;
+    gap: 10px; /* Adds space between the buttons */
+}
+
+
+/* Style for Edit button */
+form input[type="submit"].edit {
+    background-color: #ffc107;
+}
+
+form input[type="submit"].edit:hover {
+    background-color: #e0a800;
+}
+
+/* Style for Delete button */
+form input[type="submit"].delete {
+    background-color: #dc3545;
+}
+
+form input[type="submit"].delete:hover {
+    background-color: #c82333;
+}
+
+
+/* Style the cancel button */
+form input[value="Cancel"] {
+    background-color: rgb(67, 67, 237);
+}
+
+form input[value="Cancel"]:hover {
+    background-color: rgb(4, 4, 238);
+}
