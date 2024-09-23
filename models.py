@@ -35,9 +35,6 @@ class User(db.Model):
 
     posts = db.relationship('Post', backref='user', cascade="all, delete-orphan")
 
-    
-
-
     def get_full_name(self):
         """Returns the full name of the user."""
         return f'{self.first_name} {self.last_name}'
@@ -58,11 +55,17 @@ class User(db.Model):
     def get_user_by_id(cls, id):
         """Fetches a user by their ID."""
         return cls.query.filter_by(id=id).first()
-    
-
 
 class Post(db.Model):
+        """Represents a blog post in the Blogly application.
 
+        Attributes:
+            id (int): The primary key for the post.
+            title (str): The title of the post.
+            content (str): The content of the post.
+            created_at (datetime): The timestamp for when the post was created.
+            user_id (int): The ID of the user who created the post.
+        """
         __tablename__ = "posts"
 
         id = db.Column(db.Integer,
@@ -80,16 +83,19 @@ class Post(db.Model):
         user_id = db.Column(db.Integer, db.ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
 
         def format_date_time(self):
+            """Friendly date"""
             formatted_date = self.created_at.strftime("%b %d %Y, %I:%M %p")
             return formatted_date
 
 
         @classmethod
         def get_post_by_user_id(cls, id):
+            """Retrieve all posts associted with a specific user"""
             return cls.query.filter_by(user_id=id).all()
         
         @classmethod
         def get_post_by_post_id(cls, id):
+            """Retrive post by its id"""
             return cls.query.filter_by(id=id).one()
     
         
